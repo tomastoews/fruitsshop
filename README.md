@@ -1,5 +1,5 @@
 # Fruitsshop
 Animated Fruits Shop
 
-# Demo
+# Live Demo
 https://fruitsshop.netlify.com/
