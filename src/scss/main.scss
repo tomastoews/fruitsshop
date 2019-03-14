@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700');
+
+@import 'variables';
+@import 'animations';
+@import 'media-queries';
+@import 'container';
+@import 'tabbar';
+@import 'tabcontent';
+@import 'cart';
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}

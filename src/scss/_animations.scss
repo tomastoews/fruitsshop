@@ -1,0 +1,120 @@
+@keyframes hide {
+    from { 
+        margin-left: 0; 
+        margin-right: 0;
+        opacity: 1;
+    }
+    to {
+        margin-left: -5em; 
+        margin-right: 5em;
+        opacity: 0;
+    }
+}
+
+@keyframes show {
+    from {
+        margin-left: 5em; 
+        margin-right: -5em;
+        opacity: 0;
+    }
+    to {
+        margin-left: 0; 
+        margin-right: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes cart_mode {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes open_cart {
+    from { 
+        opacity: 0;
+        display: none;
+    }
+    to {
+        opacity: 1;
+        display: block;
+    }
+}
+
+@keyframes close_cart {
+    from {
+        opacity: 1;
+        display: block;
+    }
+    to { 
+        opacity: 0;
+        display: none;
+    }
+}
+
+@mixin tabbar_cart_mode_animations {
+
+    .tabs {
+        animation: cart_open 0.5s 1 forwards;
+        @keyframes cart_open {
+            0% { opacity: 1; }
+            20% { opacity: 0; }
+            100% { 
+                opacity: 0;
+                width: 0%;
+            }
+        }
+    }
+
+    .cart-button {
+        animation: cart_button_open 0.5s 1 forwards;
+        @keyframes cart_button_open {
+            0% { width: 33,33%; }
+            100% { width: 100%; }
+        }
+        .text {
+            transition: 0.5s;
+            color: transparent;
+            display: none;
+        }
+        .overlay {
+            transition: 0.5s;
+            display: block;
+        }
+    }
+
+}
+
+@mixin tabbar_close_cart_animations {
+    
+    .tabs {
+        animation: cart_close 0.5s 1 forwards;
+        @keyframes cart_close {
+            0% { 
+                opacity: 0;
+                width: 0%;
+            }
+            80% { opacity: 0; }
+            100% { 
+                opacity: 1;
+                width: 66.66%;
+            }
+        }
+    }
+    .cart-button {
+        animation: cart_btton_close 0.5s 1 forwards;
+        @keyframes cart_btton_close {
+            0% { width: 100%; }
+            100% { width: 33,33%; }
+        }
+        .text {
+            transition: 0.5s;
+            color: #fff;
+            display: block;
+        }
+        .overlay {
+            transition: 0.5s;
+            display: none;
+        }
+    }
+
+}

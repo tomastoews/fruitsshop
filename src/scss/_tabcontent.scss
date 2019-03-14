@@ -1,0 +1,126 @@
+.tab-content {
+    margin-top: 2.5em;
+    display: grid;
+    grid-gap: 1.5em;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 'box1 box1 box2 box3'
+                         'box4 box5 box5 box6';
+
+    .box1 { grid-area: box1; }
+    .box2 { grid-area: box2; }
+    .box3 { grid-area: box3; }
+    .box4 { grid-area: box4; }
+    .box5 { grid-area: box5; }
+    .box6 { grid-area: box6; }
+
+    &.tab-content1 { display: grid; }
+    &.tab-content2 { display: none; }
+    &.tab-content3 { display: none; }
+
+    &.hide { animation: hide 0.5s 1 forwards; }
+    &.show { animation: show 0.5s 1 forwards; }
+    // &.cart-mode { animation: cart_mode 0.2s 1 forwards; }
+
+    // Kiwis
+    &.tab-content1 .box1 .image { background-image: url('https://images.pexels.com/photos/51312/kiwi-fruit-vitamins-healthy-eating-51312.jpeg?auto=compress&cs=tinysrgb&h=512&w=640'); }
+    &.tab-content1 .box2 .image { background-image: url('https://images.pexels.com/photos/51312/kiwi-fruit-vitamins-healthy-eating-51312.jpeg?auto=compress&cs=tinysrgb&h=512&w=640'); }
+    &.tab-content1 .box3 .image { background-image: url('https://images.pexels.com/photos/51312/kiwi-fruit-vitamins-healthy-eating-51312.jpeg?auto=compress&cs=tinysrgb&h=512&w=640'); }
+    &.tab-content1 .box4 .image { background-image: url('https://images.pexels.com/photos/51312/kiwi-fruit-vitamins-healthy-eating-51312.jpeg?auto=compress&cs=tinysrgb&h=512&w=640'); }
+    &.tab-content1 .box5 .image { background-image: url('https://images.pexels.com/photos/51312/kiwi-fruit-vitamins-healthy-eating-51312.jpeg?auto=compress&cs=tinysrgb&h=512&w=640'); }
+    &.tab-content1 .box6 .image { background-image: url('https://images.pexels.com/photos/51312/kiwi-fruit-vitamins-healthy-eating-51312.jpeg?auto=compress&cs=tinysrgb&h=512&w=640'); }
+    
+    // Orangen
+    &.tab-content2 .box1 .image { background-image: url('https://images.pexels.com/photos/52533/orange-fruit-vitamins-healthy-eating-52533.jpeg?auto=compress&cs=tinysrgb&h=512&w=640'); }
+    &.tab-content2 .box2 .image { background-image: url('https://images.pexels.com/photos/52533/orange-fruit-vitamins-healthy-eating-52533.jpeg?auto=compress&cs=tinysrgb&h=512&w=640'); }
+    &.tab-content2 .box3 .image { background-image: url('https://images.pexels.com/photos/52533/orange-fruit-vitamins-healthy-eating-52533.jpeg?auto=compress&cs=tinysrgb&h=512&w=640'); }
+    &.tab-content2 .box4 .image { background-image: url('https://images.pexels.com/photos/52533/orange-fruit-vitamins-healthy-eating-52533.jpeg?auto=compress&cs=tinysrgb&h=512&w=640'); }
+    &.tab-content2 .box5 .image { background-image: url('https://images.pexels.com/photos/52533/orange-fruit-vitamins-healthy-eating-52533.jpeg?auto=compress&cs=tinysrgb&h=512&w=640'); }
+    &.tab-content2 .box6 .image { background-image: url('https://images.pexels.com/photos/52533/orange-fruit-vitamins-healthy-eating-52533.jpeg?auto=compress&cs=tinysrgb&h=512&w=640'); }
+    
+    // Krischen
+    &.tab-content3 .box1 .image { background-image: url('https://images.pexels.com/photos/35059/isolated-set-vegetables-basket.jpg?auto=compress&cs=tinysrgb&h=512&w=640'); }
+    &.tab-content3 .box2 .image { background-image: url('https://images.pexels.com/photos/35059/isolated-set-vegetables-basket.jpg?auto=compress&cs=tinysrgb&h=512&w=640'); }
+    &.tab-content3 .box3 .image { background-image: url('https://images.pexels.com/photos/35059/isolated-set-vegetables-basket.jpg?auto=compress&cs=tinysrgb&h=512&w=640'); }
+    &.tab-content3 .box4 .image { background-image: url('https://images.pexels.com/photos/35059/isolated-set-vegetables-basket.jpg?auto=compress&cs=tinysrgb&h=512&w=640'); }
+    &.tab-content3 .box5 .image { background-image: url('https://images.pexels.com/photos/35059/isolated-set-vegetables-basket.jpg?auto=compress&cs=tinysrgb&h=512&w=640'); }
+    &.tab-content3 .box6 .image { background-image: url('https://images.pexels.com/photos/35059/isolated-set-vegetables-basket.jpg?auto=compress&cs=tinysrgb&h=512&w=640'); }
+    
+    .box {
+        background-color: $color_box;
+        height: 21em;
+        padding: 1.5em;
+        display: flex;
+        flex-direction: column;
+
+        .title {
+            font-size: $font_regular;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .sub-title {
+            font-size: $font_small;
+            color: $color_gray;
+            font-weight: 500;
+            margin-top: 0.5em;
+        }
+
+        .image {
+            width: 100%;
+            height: 100%;
+            margin-top: 1.5em;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .details {
+            margin-top: 1.5em;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            .price {
+                font-size: $font_large;
+                font-weight: 700;
+                margin-right: 0.5em;
+            }
+            .add-to-cart {
+                cursor: pointer;
+                img { width: 1.5em; }
+            }
+        }
+    }
+}
+
+@include tablet {
+    .tab-content {
+        grid-gap: 1.5em;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 'box1 box1 box2'
+                             'box3 box4 box4'
+                             'box5 box5 box6';
+    }
+}
+
+@include tablet_small {
+    .tab-content {
+        grid-gap: 1.5em;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 'box1 box2'
+                             'box3 box4'
+                             'box5 box6';
+    }
+}
+
+@include phone_large {
+    .tab-content {
+        grid-gap: 1.5em;
+        grid-template-columns: 1fr;
+        grid-template-areas: 'box1'
+                             'box2'
+                             'box3'
+                             'box4'
+                             'box5'
+                             'box6';
+    }
+}

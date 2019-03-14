@@ -1,0 +1,75 @@
+.tabbar {
+    background-color: $color_box;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    font-size: $font_regular;
+
+    &.cart-mode {
+        @include tabbar_cart_mode_animations;
+    }
+
+    &.cart_close {
+        @include tabbar_close_cart_animations;
+    }
+
+    .tabs {
+        width: 66.66%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .tab {
+            padding: 10px 30px;
+            color: #000;
+            text-transform: uppercase;
+            font-weight: 700;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all 0.2s;
+
+            &.active {
+                background-color: $color_orange;
+                color: #fff;
+            }
+        }
+
+        .tab:first-child { margin-right: 10px; }
+        .tab:last-child { margin-left: 10px; }
+    }
+
+    .cart-button {
+        width: 33.33%;
+        background-color: $color_brown;
+        text-transform: uppercase;
+        font-weight: 700;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        .text { color: #fff; }
+        .overlay { 
+            color: #fff; 
+            display: none;
+        }
+    }
+}
+
+@include tablet_small {
+    .tabbar {
+        height: 134px;
+        
+        .tabs {   
+            display: flex;
+            flex-direction: column;
+            justify-content: stretch;
+            align-items: center;
+            padding: 1em 0;
+
+            .tab {
+                margin: 0 !important;
+            }
+        }
+    }
+}
