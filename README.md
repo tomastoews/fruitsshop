@@ -2,4 +2,4 @@
 Animated Fruits Shop UI
 
 # Live Demo
-https://fruitsshop.netlify.com/
+https://www.projects.tomastoews.de/fruitsshop
