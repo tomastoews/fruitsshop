@@ -1,18 +1,20 @@
 {
-  "name": "animated_tabs",
+  "name": "fruitsshop",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "build": "parcel build src/index.html",
+    "build-and-deploy": "rm -r -f -v dist/ && parcel build src/index.html && node rewriteURLs.js && ./deploy.sh"
   },
   "keywords": [],
   "author": "Tomas Töws",
   "license": "No license",
   "devDependencies": {
     "autoprefixer": "^9.4.10",
-    "parcel-bundler": "^1.12.0",
+    "parcel-bundler": "^1.12.4",
+    "replace-in-file": "^4.2.0",
     "sass": "^1.17.2"
   },
   "dependencies": {}
